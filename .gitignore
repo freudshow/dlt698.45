@@ -1,0 +1,9 @@
+*.o
+progname
+.settings*
+*.ber
+*.par
+*.includes
+*.config
+*.creator
+*.files
