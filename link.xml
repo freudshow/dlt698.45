@@ -1,0 +1,34 @@
+<LINK-Response>
+    <prioInvID>4</prioInvID>
+    <res>00101100</res>
+    <requestTime>
+		<year>2017</year>
+		<month>09</month>
+		<dayOfMonth>12</dayOfMonth>
+		<dayOfWeek>3</dayOfWeek>
+		<hour>12</hour>
+		<minute>11</minute>
+		<second>56</second>
+		<milliseconds>111</milliseconds>
+	</requestTime>
+	<recvTime>
+		<year>2017</year>
+		<month>09</month>
+		<dayOfMonth>12</dayOfMonth>
+		<dayOfWeek>3</dayOfWeek>
+		<hour>12</hour>
+		<minute>11</minute>
+		<second>56</second>
+		<milliseconds>111</milliseconds>
+	</recvTime>
+	<responseTime>
+		<year>2017</year>
+		<month>09</month>
+		<dayOfMonth>12</dayOfMonth>
+		<dayOfWeek>3</dayOfWeek>
+		<hour>12</hour>
+		<minute>11</minute>
+		<second>56</second>
+		<milliseconds>111</milliseconds>
+	</responseTime>
+</LINK-Response>
