@@ -7,3 +7,10 @@ progname
 *.config
 *.creator
 *.files
+*.cflags
+*.user.*
+*.user
+*.cxxflags
+*.udb
+*.der
+*.per

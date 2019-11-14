@@ -737,7 +737,7 @@ DLT69845 DEFINITIONS ::= BEGIN
         result GetResponseMD5result
     }
 
-	SET-Request ::= SEQUENCE {
+	SET-Request ::= CHOICE {
         setRequestNormal            [1] SetRequestNormal,           --设置一个对象属性请求
         setRequestNormalList        [2] SetRequestNormalList,       --设置若干个对象属性请求
         setThenGetRequestNormalList [3] SetThenGetRequestNormalList --设置后读取若干个对象属性请求
