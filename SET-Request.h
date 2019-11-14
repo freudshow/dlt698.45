@@ -15,17 +15,28 @@
 #include "SetRequestNormal.h"
 #include "SetRequestNormalList.h"
 #include "SetThenGetRequestNormalList.h"
-#include <constr_SEQUENCE.h>
+#include <constr_CHOICE.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/* Dependencies */
+typedef enum SET_Request_PR {
+	SET_Request_PR_NOTHING,	/* No components present */
+	SET_Request_PR_setRequestNormal,
+	SET_Request_PR_setRequestNormalList,
+	SET_Request_PR_setThenGetRequestNormalList
+} SET_Request_PR;
+
 /* SET-Request */
 typedef struct SET_Request {
-	SetRequestNormal_t	 setRequestNormal;
-	SetRequestNormalList_t	 setRequestNormalList;
-	SetThenGetRequestNormalList_t	 setThenGetRequestNormalList;
+	SET_Request_PR present;
+	union SET_Request_u {
+		SetRequestNormal_t	 setRequestNormal;
+		SetRequestNormalList_t	 setRequestNormalList;
+		SetThenGetRequestNormalList_t	 setThenGetRequestNormalList;
+	} choice;
 	
 	/* Context for parsing across buffer boundaries */
 	asn_struct_ctx_t _asn_ctx;

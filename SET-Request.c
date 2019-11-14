@@ -7,8 +7,13 @@
 
 #include "SET-Request.h"
 
+static asn_per_constraints_t asn_PER_type_SET_Request_constr_1 GCC_NOTUSED = {
+	{ APC_CONSTRAINED,	 2,  2,  0,  2 }	/* (0..2) */,
+	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
+	0, 0	/* No PER value map */
+};
 static asn_TYPE_member_t asn_MBR_SET_Request_1[] = {
-	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, setRequestNormal),
+	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, choice.setRequestNormal),
 		(ASN_TAG_CLASS_CONTEXT | (1 << 2)),
 		+1,	/* EXPLICIT tag at current level */
 		&asn_DEF_SetRequestNormal,
@@ -17,7 +22,7 @@ static asn_TYPE_member_t asn_MBR_SET_Request_1[] = {
 		0,
 		"setRequestNormal"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, setRequestNormalList),
+	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, choice.setRequestNormalList),
 		(ASN_TAG_CLASS_CONTEXT | (2 << 2)),
 		+1,	/* EXPLICIT tag at current level */
 		&asn_DEF_SetRequestNormalList,
@@ -26,7 +31,7 @@ static asn_TYPE_member_t asn_MBR_SET_Request_1[] = {
 		0,
 		"setRequestNormalList"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, setThenGetRequestNormalList),
+	{ ATF_NOFLAGS, 0, offsetof(struct SET_Request, choice.setThenGetRequestNormalList),
 		(ASN_TAG_CLASS_CONTEXT | (3 << 2)),
 		+1,	/* EXPLICIT tag at current level */
 		&asn_DEF_SetThenGetRequestNormalList,
@@ -36,43 +41,39 @@ static asn_TYPE_member_t asn_MBR_SET_Request_1[] = {
 		"setThenGetRequestNormalList"
 		},
 };
-static const ber_tlv_tag_t asn_DEF_SET_Request_tags_1[] = {
-	(ASN_TAG_CLASS_UNIVERSAL | (16 << 2))
-};
 static const asn_TYPE_tag2member_t asn_MAP_SET_Request_tag2el_1[] = {
     { (ASN_TAG_CLASS_CONTEXT | (1 << 2)), 0, 0, 0 }, /* setRequestNormal */
     { (ASN_TAG_CLASS_CONTEXT | (2 << 2)), 1, 0, 0 }, /* setRequestNormalList */
     { (ASN_TAG_CLASS_CONTEXT | (3 << 2)), 2, 0, 0 } /* setThenGetRequestNormalList */
 };
-static asn_SEQUENCE_specifics_t asn_SPC_SET_Request_specs_1 = {
+static asn_CHOICE_specifics_t asn_SPC_SET_Request_specs_1 = {
 	sizeof(struct SET_Request),
 	offsetof(struct SET_Request, _asn_ctx),
+	offsetof(struct SET_Request, present),
+	sizeof(((struct SET_Request *)0)->present),
 	asn_MAP_SET_Request_tag2el_1,
 	3,	/* Count of tags in the map */
-	0, 0, 0,	/* Optional elements (not needed) */
-	-1,	/* Start extensions */
-	-1	/* Stop extensions */
+	0,
+	-1	/* Extensions start */
 };
 asn_TYPE_descriptor_t asn_DEF_SET_Request = {
 	"SET-Request",
 	"SET-Request",
-	SEQUENCE_free,
-	SEQUENCE_print,
-	SEQUENCE_constraint,
-	SEQUENCE_decode_ber,
-	SEQUENCE_encode_der,
-	SEQUENCE_decode_xer,
-	SEQUENCE_encode_xer,
-	SEQUENCE_decode_uper,
-	SEQUENCE_encode_uper,
-	0,	/* Use generic outmost tag fetcher */
-	asn_DEF_SET_Request_tags_1,
-	sizeof(asn_DEF_SET_Request_tags_1)
-		/sizeof(asn_DEF_SET_Request_tags_1[0]), /* 1 */
-	asn_DEF_SET_Request_tags_1,	/* Same as above */
-	sizeof(asn_DEF_SET_Request_tags_1)
-		/sizeof(asn_DEF_SET_Request_tags_1[0]), /* 1 */
-	0,	/* No PER visible constraints */
+	CHOICE_free,
+	CHOICE_print,
+	CHOICE_constraint,
+	CHOICE_decode_ber,
+	CHOICE_encode_der,
+	CHOICE_decode_xer,
+	CHOICE_encode_xer,
+	CHOICE_decode_uper,
+	CHOICE_encode_uper,
+	CHOICE_outmost_tag,
+	0,	/* No effective tags (pointer) */
+	0,	/* No effective tags (count) */
+	0,	/* No tags (pointer) */
+	0,	/* No tags (count) */
+	&asn_PER_type_SET_Request_constr_1,
 	asn_MBR_SET_Request_1,
 	3,	/* Elements count */
 	&asn_SPC_SET_Request_specs_1	/* Additional specs */
