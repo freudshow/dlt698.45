@@ -244,6 +244,7 @@ main(int ac, char *av[]) {
 
 	setvbuf(stdout, 0, _IOLBF, 0);
 
+	//usage: ./dlt698.45 -oxer ../dlt698.45.asn1
 	for(num = 0; num < number_of_iterations; num++) {
 	  int ac_i;
 	  /*
